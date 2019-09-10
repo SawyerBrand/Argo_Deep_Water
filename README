@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This function was made by Sawyer Brand, SIO/SOCCOM            %
+% during research into the Argentine Basin mesoscale activities %
+% and CO2/Heat Flux in that region                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+CONTENTS:
+Alty.m
+        Not working right now
+ArgoDensityProfiles.m
+        
+Bathy.m
+Buoy.m
+CO2_Land.m
+contour_argo.m
+float_plots.m
+Freshy.m
+get_mats.m
+get_Matt_alt.m
+heat_content.m
+heat_content_plots.m
+Heat_Eval.m
+Heaty.m
+highlight_profile.m
+Int_Plots.m
+interpolation_comparison.m
+interpolation_test.m
+process_argo.m
+TempInt.m
+
+FLOAT TRAJECTORY MAPPING
+%==================================================================
+d = load('6901814data.mat');
+
+for row = 10:1:length(d.data.lat)    %loop through the positions in the file
+    Latitude = d.data.lat;   %get Latitude variable
+    Longitude = d.data.lon;  %get Longitude variable
+    Flo = plot(Longitude(row),Latitude(row),'.','MarkerSize',meta.MarkerSize,'LineWidth',4,'MarkerEdgeColor',[1 0 0]); 
+end
+
+Cruise = line(Longitude(10:442),Latitude(10:442),'LineWidth',2,'Color',[0 0 1]);
+
+
+d2 = load('6901814data.mat');
+
+for row = 10:1:length(d2.data.lat)    %loop through the positions in the file
+    Latitude2 = d2.data.lat;   %get Latitude variable
+    Longitude2 = d2.data.lon;  %get Longitude variable
+    Flo2 = plot(Longitude(row),Latitude(row),'.','MarkerSize',meta.MarkerSize,'LineWidth',4,'MarkerEdgeColor',[1 0 0]); 
+end
+
+Cruise2 = line(Longitude2(10:442),Latitude2(10:442),'LineWidth',2,'Color',[0 0 1]);
+
+
+%==================================================================
+
